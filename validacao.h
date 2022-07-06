@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "usuarios.h"
-#include "add_na_lista.h"
 #include "encomenda.h"
+#include "fila_add_remover.h"
 
 void trabalhadores_pre_cadastrados(){
     
@@ -52,7 +52,7 @@ void validacao(){
         if ((aux->cpf == cpf) && (aux->tipo == tipo)){
             if (aux->senha == senha){
                 printf("SENHA CORRETA");
-                remover_na_fila();
+                remover_fila();
                 return nome_responsavel = aux->nome;
             }else{
                 printf("SENHA INCORRETA");
