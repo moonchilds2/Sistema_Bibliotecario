@@ -3,6 +3,7 @@
 #include "usuarios.h"
 #include "add_na_lista.h"
 #include "encomenda.h"
+#include "remover_na_fila.h"
 
 void trabalhadores_pre_cadastrados(){
     
