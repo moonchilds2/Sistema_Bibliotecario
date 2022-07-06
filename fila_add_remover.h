@@ -15,12 +15,6 @@ typedef struct pedido{
     struct pedido * prox;
 }pedido;
 
-typedef struct dados_transportador{
-    char * nome_transportador;
-    long long cpf;
-    int id_transportador; // verificar 
-}DADOS_TRANSPORTADOR;
-
 pedido * inicio_f = NULL;
 pedido * fim_f = NULL;
 int tam = 0;
@@ -57,31 +51,6 @@ void add_na_lista(int identificador, int matricula, char * campus_onde_esta_o_li
     tam++;
 
 }
-
-void add_transportador(char * nome_transportador, long long cpf, int id_transportador){   
-       
-        DADOS_TRANSPORTADOR * d = (DADOS_TRANSPORTADOR*)malloc(sizeof(DADOS_TRANSPORTADOR));
-        d->nome_transportador = nome_transportador;
-        d->cpf = cpf;
-        d->id_transportador = id_transportador;
-
-        pedido * novo = (pedido *)malloc(sizeof(pedido));
-        novo-> p = p;
-        novo->prox = NULL;
-   
-   
-        if(inicio_f == NULL){
-            inicio_f = novo;
-            fim_f = novo;
-            tam++;
-        }else{           
-            fim_f->prox = novo;
-            fim_f = novo;
-            tam++;
-        }
-}
-
-
 
 pedido remover_fila(){
     pedido pedido;
