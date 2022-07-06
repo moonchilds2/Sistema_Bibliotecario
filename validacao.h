@@ -49,8 +49,8 @@ void validacao(){
             printf("SENHA INCORRETA");
         }
     }else{
-        if ((aux -> cpf == cpf) && (aux -> tipo == tipo)){
-            if (aux -> senha == senha){
+        if ((aux->cpf == cpf) && (aux->tipo == tipo)){
+            if (aux->senha == senha){
                 printf("SENHA CORRETA");
                 remover_na_fila();      
             }else{
