@@ -43,17 +43,18 @@ void validacao(){
             add_na_lista(editar, raiz);
             raiz = remover_encomenda(raiz, editar); 
             
-            char *nome_responsavel;
-            return nome_responsavel = aux->nome;
+            char *nome_responsavel_secr;
+            return nome_responsavel_secr = aux->nome;
         }else{
             printf("SENHA INCORRETA");
         }
     }else{
         if ((aux->cpf == cpf) && (aux->tipo == tipo)){
             if (aux->senha == senha){
+                char * nome_responsavel_transpor;
                 printf("SENHA CORRETA");
                 remover_fila();
-                return nome_responsavel = aux->nome;
+                return nome_responsavel_transpor = aux->nome;
             }else{
                 printf("SENHA INCORRETA");
             } 
