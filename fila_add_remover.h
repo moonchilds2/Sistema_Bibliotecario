@@ -56,19 +56,25 @@ void add_na_lista(int identificador, int matricula, char * nome_do_aluno, int * 
 
 }
 
-pedido remover_fila(){
-    pedido pedido;
+void remover_fila(){
+    
         if(inicio_f != NULL){  
             pedido * lixo = inicio_f;
             inicio_f = inicio_f -> prox;
-            pedido.identificador = lixo->p->identificador;
+            printf("\n\nIdentificador: %d", lixo -> identificador);
+            printf("\nNome do aulo: %s", lixo -> nome_do_aluno);
+            printf("\nMatricula: %d", lixo -> matricula);
+            printf("\nNome do responsavel: %s", lixo -> nome_resposavel);
+            printf("\nDetalhe do livro: %s", lixo -> detalhe);
+            printf("\nCampus onde esta o livro: %s", lixo -> campus_onde_esta_o_livro);
+            printf("\nCampus onde esta o aluno: %s", lixo -> campus_onde_esta_o_aluno);
+            printf("\nNivel de prioridade: %d", lixo -> nivel_prioridade);
 
             free(lixo);
             tam--;
-            if(tam == 1){
-                fim_f = NULL;
+            }else{
+                printf("Fila de pedidos vazia!!");
             }
-        printf("Nome do TRANSPORTADOR responsavel: %d\n", aux->d->nome_transportador);                   
+                       
         }         
-    return pedido;
 }
