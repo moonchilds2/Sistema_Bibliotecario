@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "usuarios.h"
-#include "add_na_lista.h"
+#include "fila_add_remover.h.h"
 #include "encomenda.h"
 #include "remover_na_lista.h"
 #include "validacao.h"
-//falta decidir qual remover vai ser usado
-
 
 int main(){
     printf("\nSISTEMA DE ENCOMENDA DE LIVRO\n");
