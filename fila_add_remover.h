@@ -10,7 +10,7 @@ typedef struct pedido{
     char * nome_do_aluno;
     char detalhe[300];
     char * nome_responsavel_secr;
-    int nivel_prioridade;// de 0 a 100
+    int nivel_prioridade;
 
     struct pedido * prox;
 }pedido;
@@ -35,16 +35,16 @@ void add_na_lista(int identificador, int matricula, char * nome_do_aluno, int * 
     novo_ped -> nivel_prioridade = nivel_prioridade;
     novo_ped -> nome_responsavel_secr = nome_responsavel_secr;
 
-    if(inicio_f == NULL){//se a lista estiver vazia
+    if(inicio_f == NULL){
         inicio_f = novo_ped;
         fim_f = novo_ped;
-    }else if(inicio_f -> nivel_propriedade < novo_ped -> nivel_propriedade){//se o nivel de propriedade do novo_ped for maior q o inicio da fila
+    }else if(inicio_f -> nivel_propriedade < novo_ped -> nivel_propriedade){
         novo_ped -> prox = inicio_f;
         inicio_f = novo_ped;
-    }else if(fim_f -> nivel_propriedade > novo_ped -> nivel_propriedade){//se o nivel de propriedade do novo_ped for menor que o fim da lista
+    }else if(fim_f -> nivel_propriedade > novo_ped -> nivel_propriedade){
         fim_f -> prox = novo_ped;
         fim_f = novo_ped;
-    }else{//se o nivel da propriedade no novo_ped for menor que o inicio da fila e for maior que o fim da mesma, achar um lugar do valor ideial para ela no meio
+    }else{
         pedido * aux = inicio_f;
         while(aux -> nivel_propriedade > novo_ped -> nivel_propriedade){
             aux = aux -> prox;
