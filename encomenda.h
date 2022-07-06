@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 typedef struct encomenda{
 
@@ -47,7 +48,41 @@ encomenda* busca(int id, encomenda* aux){
 
 }
 
+int buscar_id(int id, encomenda *aux){
+    if(aux != NULL){
+        if(aux->id == id){
+            return 1;
+        }else if(id < aux->id){
+            if(aux->esq != NULL){
+                return buscar_id(id, aux->esq);
+            }else{
+                return 0;
+            }
+        }else if(id > aux->id){
+            if(aux->dir != NULL){
+                return buscar_id(id, aux->dir);
+            }else{
+                return 0;
+            }
+        }
+    }else{
+        return 0;
+    }
+}
+
 encomenda* raiz = NULL;
+
+int idaleatorio(){ 
+    int i;
+    int buscarid = 1;
+    srand(time(NULL));
+    while(buscarid == 1){
+        i = (rand()%1000);
+        buscarid = buscar_id(i, raiz);
+        printf("%d\n", rand());
+    }
+    return i;
+}
 
 void add_encomenda(int id){
 
@@ -115,11 +150,11 @@ encomenda* remover_encomenda(int id, encomenda* aux){
 
     else{
         if(id < aux->id){
-        aux->esq = remover_encomenda(id, aux->esq);
+            aux->esq = remover_encomenda(id, aux->esq);
         }
 
         else if(id > aux->id){
-        aux->dir = remover_encomenda(id, aux->dir);
+            aux->dir = remover_encomenda(id, aux->dir);
         }
         else{
             if(aux->esq == NULL && aux->dir == NULL){ //folha
@@ -139,7 +174,7 @@ encomenda* remover_encomenda(int id, encomenda* aux){
 
             else{ // 1 filho
                 if(id < aux->id){
-                aux->esq = remover_encomenda(id, aux->esq);
+                    aux->esq = remover_encomenda(id, aux->esq);
                 }
 
                 else if(id > aux->id){
