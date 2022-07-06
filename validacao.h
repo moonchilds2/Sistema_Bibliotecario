@@ -51,10 +51,8 @@ void validacao(){
     }else{
         if ((aux->cpf == cpf) && (aux->tipo == tipo)){
             if (aux->senha == senha){
-                char * nome_responsavel_transpor;
                 printf("SENHA CORRETA");
                 remover_fila();
-                return nome_responsavel_transpor = aux->nome;
             }else{
                 printf("SENHA INCORRETA");
             } 
