@@ -3,7 +3,6 @@
 #include "usuarios.h"
 #include "fila_add_remover.h.h"
 #include "encomenda.h"
-#include "remover_na_lista.h"
 #include "validacao.h"
 
 int main(){
