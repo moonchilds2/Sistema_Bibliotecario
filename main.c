@@ -17,7 +17,7 @@ int main(){
         printf("Digite a funcionalidade desejada:");
         scanf("%d", &resp);
         if(resp == 1){
-            encomendar_livro();
+            add_encomenda();
         }else if(resp == 2){
             int retorno = verificar(cpf, senha); //verificar cpf e senha do secretario
             remover_encomenda(); // chamar a funcao para REMOVER A ENCOMENDA se nao REMOVER PEDIDO
