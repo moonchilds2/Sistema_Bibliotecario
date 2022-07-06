@@ -12,7 +12,6 @@ typedef struct pedido{
     char * nome_responsavel_secr;
     int nivel_prioridade;// de 0 a 100
 
-    DADOS_TRANSPORTADOR * d;
     struct pedido * prox;
 }pedido;
 
