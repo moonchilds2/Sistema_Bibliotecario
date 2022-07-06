@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "validacao.h"
 
 typedef struct pedido{
     int identificador, matricula;
