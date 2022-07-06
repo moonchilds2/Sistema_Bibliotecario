@@ -9,7 +9,7 @@ typedef struct pedido{
     char * campus_onde_esta_o_aluno;
     char * nome_do_aluno;
     char detalhe[300];
-    char * nome_resposavel;
+    char * nome_responsavel_secr;
     int nivel_prioridade;// de 0 a 100
 
     DADOS_TRANSPORTADOR * d;
@@ -20,7 +20,7 @@ pedido * inicio_f = NULL;
 pedido * fim_f = NULL;
 int tam = 0;
 
-void add_na_lista(int identificador, int matricula, char * nome_do_aluno, int * nome_responsavel){
+void add_na_lista(int identificador, int matricula, char * nome_do_aluno, int * nome_responsavel_secr){
     char * campus_onde_esta_o_livro;
     char * campus_onde_esta_o_aluno;
     int nivel_prioridade;
@@ -34,6 +34,7 @@ void add_na_lista(int identificador, int matricula, char * nome_do_aluno, int * 
     novo_ped -> campus_onde_esta_o_aluno = campus_onde_esta_o_aluno;
     novo_ped -> nome_do_aluno = nome_do_aluno;
     novo_ped -> nivel_prioridade = nivel_prioridade;
+    novo_ped -> nome_responsavel_secr = nome_responsavel_secr;
 
     if(inicio_f == NULL){//se a lista estiver vazia
         inicio_f = novo_ped;
