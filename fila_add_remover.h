@@ -64,7 +64,7 @@ void remover_fila(){
             printf("\n\nIdentificador: %d", lixo -> identificador);
             printf("\nNome do aulo: %s", lixo -> nome_do_aluno);
             printf("\nMatricula: %d", lixo -> matricula);
-            printf("\nNome do responsavel: %s", lixo -> nome_resposavel);
+            printf("\nNome do responsavel: %s", lixo -> nome_responsavel_secr);
             printf("\nDetalhe do livro: %s", lixo -> detalhe);
             printf("\nCampus onde esta o livro: %s", lixo -> campus_onde_esta_o_livro);
             printf("\nCampus onde esta o aluno: %s", lixo -> campus_onde_esta_o_aluno);
