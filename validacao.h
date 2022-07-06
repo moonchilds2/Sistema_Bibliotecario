@@ -3,7 +3,6 @@
 #include "usuarios.h"
 #include "add_na_lista.h"
 #include "encomenda.h"
-#include "remover_na_fila.h"
 
 void trabalhadores_pre_cadastrados(){
     
@@ -20,8 +19,16 @@ void trabalhadores_pre_cadastrados(){
     add_usuario("Marcos", 't', 4784, 2961);
 }
 
-int validacao(int cpf, int senha, int tipo){
+void validacao(){
     usuario * aux = inicio;
+    
+    printf("Digite o cpf: ");
+    scanf("%d", &cpf);
+    printf("Digite a senha: ");
+    scanf("%d", &senha);
+    printf("Digite o Cargo: ");
+    scanf("%c", &tipo); // "s" para Secretario e "t" para transportador
+    
     while (aux -> cpf != cpf){
         aux = aux -> prox;
     }
