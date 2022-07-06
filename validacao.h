@@ -27,7 +27,7 @@ void validacao(){
     printf("Digite a senha: ");
     scanf("%d", &senha);
     printf("Digite o Cargo: ");
-    scanf("%c", &tipo); // "s" para Secretario e "t" para transportador
+    scanf("%c", &tipo);
     
     while (aux -> cpf != cpf){
         aux = aux -> prox;
