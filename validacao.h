@@ -52,7 +52,8 @@ void validacao(){
         if ((aux->cpf == cpf) && (aux->tipo == tipo)){
             if (aux->senha == senha){
                 printf("SENHA CORRETA");
-                remover_na_fila();      
+                remover_na_fila();
+                return nome_responsavel = aux->nome;
             }else{
                 printf("SENHA INCORRETA");
             } 
