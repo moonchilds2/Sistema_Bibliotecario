@@ -80,9 +80,7 @@ int idaleatorio(){
     while(buscarid == 1){
         i = (rand()%1000);
         buscarid = buscar_id(i, raiz);
-        //printf("%d\n", rand());
     }
-    //getch();
     return i;
 }
 
@@ -167,10 +165,10 @@ encomenda* remover_encomenda(int id, encomenda* aux, char* nome_responsavel){
 
             add_na_fila(aux->id, aux->matricula, aux->aluno, aux->detalhes, nome_responsavel);
 
-            if(aux->esq == NULL && aux->dir == NULL){ //folha
+            if(aux->esq == NULL && aux->dir == NULL){ 
                 aux = NULL;
             }
-            else if(aux -> esq != NULL && aux->dir != NULL){ //2 filho
+            else if(aux -> esq != NULL && aux->dir != NULL){ 
                 encomenda* aux2 = aux->esq;
 
                 while(aux2->dir != NULL){
@@ -182,7 +180,7 @@ encomenda* remover_encomenda(int id, encomenda* aux, char* nome_responsavel){
                 aux->esq = remover_encomenda(id, aux->esq, nome_responsavel);
             }
 
-            else{ // 1 filho
+            else{ 
                 if(id < aux->id){
                 aux->esq = remover_encomenda(id, aux->esq, nome_responsavel);
                 }
