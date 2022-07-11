@@ -1,12 +1,14 @@
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
+#include "fila_add_remover.h"
 
 typedef struct encomenda{
 
     int id;
     char aluno[50];
     int matricula;
-    char detalhes[300];
+    char detalhes[100];
 
     struct encomenda* esq;
     struct encomenda* dir;
@@ -49,9 +51,48 @@ encomenda* busca(int id, encomenda* aux){
 
 encomenda* raiz = NULL;
 
+int buscar_id(int id, encomenda* aux){
+    if(aux != NULL){
+        if(aux->id == id){
+            return 1;
+        }else if(id < aux->id){
+            if(aux->esq != NULL){
+                return buscar_id(id, aux->esq);
+            }else{
+                return 0;
+            }
+        }else if(id > aux->id){
+            if(aux->dir != NULL){
+                return buscar_id(id, aux->dir);
+            }else{
+                return 0;
+            }
+        }
+    }else{
+        return 0;
+    }
+}
+
+int idaleatorio(){ 
+    int i;
+    int buscarid = 1;
+    srand(time(NULL));
+    while(buscarid == 1){
+        i = (rand()%1000);
+        buscarid = buscar_id(i, raiz);
+        //printf("%d\n", rand());
+    }
+    //getch();
+    return i;
+}
+
 void add_encomenda(int id){
 
+
+
     encomenda* novo = (encomenda*)malloc(sizeof(encomenda));
+
+
 
     printf("Digite o nome do aluno: ");
     scanf(" %50[^\n]s", novo->aluno);
@@ -66,7 +107,7 @@ void add_encomenda(int id){
     novo->esq = NULL;
     novo->dir = NULL;
 
-    encomenda* aux = busca(id, raiz);
+    encomenda* aux = busca(id,raiz);
 
     
     if(aux == NULL){
@@ -107,7 +148,7 @@ void visualizar_in_ordem(encomenda* aux){
 }
 
 
-encomenda* remover_encomenda(int id, encomenda* aux){
+encomenda* remover_encomenda(int id, encomenda* aux, char* nome_responsavel){
 
     if(aux == NULL){
         return NULL;
@@ -115,13 +156,16 @@ encomenda* remover_encomenda(int id, encomenda* aux){
 
     else{
         if(id < aux->id){
-        aux->esq = remover_encomenda(id, aux->esq);
+        aux->esq = remover_encomenda(id, aux->esq, nome_responsavel);
         }
 
         else if(id > aux->id){
-        aux->dir = remover_encomenda(id, aux->dir);
+        aux->dir = remover_encomenda(id, aux->dir, nome_responsavel);
         }
         else{
+
+            add_na_fila(aux->id, aux->matricula, aux->aluno, aux->detalhes, nome_responsavel);
+
             if(aux->esq == NULL && aux->dir == NULL){ //folha
                 aux = NULL;
             }
@@ -134,16 +178,16 @@ encomenda* remover_encomenda(int id, encomenda* aux){
 
                 aux->id = aux2->id;
                 aux2->id = id;
-                aux->esq = remover_encomenda(id, aux->esq);
+                aux->esq = remover_encomenda(id, aux->esq, nome_responsavel);
             }
 
             else{ // 1 filho
                 if(id < aux->id){
-                aux->esq = remover_encomenda(id, aux->esq);
+                aux->esq = remover_encomenda(id, aux->esq, nome_responsavel);
                 }
 
                 else if(id > aux->id){
-                    aux->dir = remover_encomenda(id, aux->dir);
+                    aux->dir = remover_encomenda(id, aux->dir, nome_responsavel);
                 }
                 
 

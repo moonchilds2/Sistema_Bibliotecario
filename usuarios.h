@@ -5,7 +5,7 @@ typedef struct usuario{
 
     char* nome;
     char tipo;
-    long long cpf;
+    int cpf;
     int senha;
 
     struct usuario* prox;
@@ -14,9 +14,9 @@ typedef struct usuario{
 
 
 usuario* inicio = NULL;
-int tam = 0;
+int tamanho = 0;
 
-void add_usuario(char nome[50], char tipo, long long cpf, int senha){
+void add_usuario(char * nome, char tipo, int cpf, int senha){
 
     usuario* novo = (usuario*)malloc(sizeof(usuario));
     novo->nome = nome;
@@ -31,6 +31,5 @@ void add_usuario(char nome[50], char tipo, long long cpf, int senha){
         novo->prox = inicio;
         inicio = novo;
     }
-    tam++;
+    tamanho++;
 }
-
