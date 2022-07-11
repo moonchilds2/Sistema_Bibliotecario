@@ -40,7 +40,7 @@ void validacao(){
                 printf("Encomendas existentes: \n");
                 int editar;
                 visualizar_in_ordem(raiz);
-                printf("Digite a encomenda a ser removida: ");
+                printf("\nDigite o ID da encomenda a ser removida: ");
                 scanf("%d", &editar);
 
                 raiz = remover_encomenda(editar, raiz, aux->nome);
@@ -53,7 +53,7 @@ void validacao(){
                 printf("SENHA CORRETA\n");
                 printf("\nPedido a ser removido:");
                 remover_fila();
-                printf("\nPedido removido com sucesso!\n\n");
+                printf("\n\nPedido removido com sucesso!\n\n");
             }else{
                 printf("Insercao invalida, tente novamente\n");
             }

@@ -136,6 +136,7 @@ void visualizar_in_ordem(encomenda* aux){
         visualizar_in_ordem(aux->esq);
     }
 
+    printf("\n");
     printf("ID: %d\n", aux->id);
     printf("Aluno: %s\n", aux->aluno);
     printf("Matricula: %d\n", aux->matricula);

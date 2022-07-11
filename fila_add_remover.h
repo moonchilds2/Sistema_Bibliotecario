@@ -20,9 +20,9 @@ int tam = 0;
 void add_na_fila(int identificador, int matricula, char * nome_aluno, char * detalhes, char* nome_responsavel){
     
     pedido * novo_ped = (pedido *)malloc(sizeof(pedido));
-    printf("Qual o campus onde esta o livro do pedido?");scanf(" %100[^\n]s", novo_ped->campus_onde_esta_o_livro);
-    printf("\nQual o campus onde esta o aluno?");scanf(" %100[^\n]s", novo_ped->campus_onde_esta_o_aluno);
-    printf("\nDe 0 a 100 qual o nivel de prioridade desse pedido?");scanf("%d", &novo_ped->nivel_prioridade);
+    printf("Qual o campus onde esta o livro do pedido ? ");scanf(" %100[^\n]s", novo_ped->campus_onde_esta_o_livro);
+    printf("\nQual o campus onde esta o aluno ? ");scanf(" %100[^\n]s", novo_ped->campus_onde_esta_o_aluno);
+    printf("\nDe 0 a 100 qual o nivel de prioridade desse pedido ? ");scanf("%d", &novo_ped->nivel_prioridade);
     novo_ped -> identificador = identificador;
     novo_ped -> matricula = matricula;
     novo_ped -> nome_do_aluno = nome_aluno;
