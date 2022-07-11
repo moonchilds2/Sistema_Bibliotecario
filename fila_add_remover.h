@@ -65,8 +65,6 @@ void remover_fila(){
 
         free(lixo);
         tam--;
-        }else{
-            printf("Fila de pedidos vazia!!");
         }
                     
     }         
