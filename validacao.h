@@ -51,9 +51,9 @@ void validacao(){
         }else if ((aux->cpf == cpf) && (aux->tipo == 't')){
             if (aux->senha == senha){
                 printf("SENHA CORRETA\n");
-                printf("Pedido a ser removido: \n");
+                printf("\nPedido a ser removido:");
                 remover_fila();
-                printf("\nPedido removido com sucesso !\n");
+                printf("\nPedido removido com sucesso!\n\n");
             }else{
                 printf("Insercao invalida, tente novamente\n");
             }
