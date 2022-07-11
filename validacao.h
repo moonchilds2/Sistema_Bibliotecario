@@ -36,7 +36,7 @@ void validacao(){
     if(aux != NULL){
         if ((aux->cpf == cpf) && (aux -> tipo == 's')){
             if (aux -> senha == senha){
-                printf("SENHA CORRETA\n");
+                printf("\nSENHA CORRETA\n");
                 printf("Encomendas existentes: \n");
                 int editar;
                 visualizar_in_ordem(raiz);
@@ -50,9 +50,10 @@ void validacao(){
             }
         }else if ((aux->cpf == cpf) && (aux->tipo == 't')){
             if (aux->senha == senha){
-                printf("\nSENHA CORRETA\n");
-                printf("Pedido a ser transportado:");
+                printf("SENHA CORRETA\n");
+                printf("Pedido a ser removido: \n");
                 remover_fila();
+                printf("\nPedido removido com sucesso !\n");
             }else{
                 printf("Insercao invalida, tente novamente\n");
             }

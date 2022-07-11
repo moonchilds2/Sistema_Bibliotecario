@@ -11,18 +11,14 @@ int main(){
         printf(" 2 - Remover uma encomenda de livro.\n");
         printf(" 3 - Remover um pedido de livro.\n");
         printf(" 0 - Sair do sistema!\n");
-        printf("Digite a funcionalidade desejada: ");
+        printf("Digite a funcionalidade desejada:");
         scanf("%d", &resp);
-
+        
         if(resp == 1){           
             add_encomenda(idaleatorio());
-        }
-        
-        else if(resp == 2){
+        }else if(resp == 2){
             validacao();
-        }
-        
-        else if(resp == 3){               
+        }else if(resp == 3){               
             validacao();
         }
     }

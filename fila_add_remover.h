@@ -61,8 +61,7 @@ void remover_fila(){
         printf("\nNome do responsavel: %s", lixo -> nome_responsavel);
         printf("\nDetalhe do livro: %s", lixo -> detalhe);
         printf("\nCampus onde esta o livro: %s", lixo -> campus_onde_esta_o_livro);
-        printf("\nCampus onde esta o aluno: %s\n", lixo -> campus_onde_esta_o_aluno);
-        printf("Pedido removido com sucesso!\n\n");
+        printf("\nCampus onde esta o aluno: %s", lixo -> campus_onde_esta_o_aluno);
 
         free(lixo);
         tam--;
